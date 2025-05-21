@@ -172,7 +172,7 @@ const ChatBubble = (props) => {
               ? "rgba(0, 0, 0, 1)"
               : "rgba(0, 0, 0, 0.7)",
             borderRadius: "10px",
-            padding: "0.25vh 1vw", 
+            padding: "1vh 1vw", 
             color: "white",
             display: "flex",
             justifyContent: "center",

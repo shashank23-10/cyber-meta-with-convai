@@ -83,24 +83,25 @@ if (isRansomwareActive) {
 }
 
 return (
-<div className={`scenarios-wrapper ${isOpen ? 'open' : 'collapsed'}`} >
+<>
+{isUSBInserted && (
+<img
+    src={usbIcon}
+    alt="USB Connected"
+    style={{
+    position: 'absolute',
+    top: '1vh',
+    left: '90%',
+    transform: 'translateX(-89vw)', 
+    width: '10%',
+    height: 'auto',
+    zIndex: 1000,
+    border: '4px solid red'
+    }}
+/>
+)}
 
-    {isUSBInserted && (
-        <img
-            src={usbIcon}
-            alt="USB Connected"
-            style={{
-            position: 'absolute',
-            top: '6vh',
-            left: '50%',
-            transform: 'translateX(-89vw)', 
-            width: '60%',
-            height: 'auto',
-            zIndex: 1000,
-            border: '4px solid red'
-            }}
-        />
-        )}
+<div className={`scenarios-wrapper ${isOpen ? 'open' : 'collapsed'}`} >
 
     <Location location={MetaLocation} visible={true} />
 
@@ -357,6 +358,8 @@ return (
     </div>
     )}
 </div>
+
+</>
 );
 };
 
