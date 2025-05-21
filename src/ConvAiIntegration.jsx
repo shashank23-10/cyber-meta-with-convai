@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { KeyboardControls } from "@react-three/drei";
-import { useConvaiClient } from "../hooks/useConvaiClient";
-import { Experience } from "./Experience";
-import ChatBubble from "./Chat";
+import { useConvaiClient } from "./hooks/useConvaiClient";
+import { Experience } from "./components/Experience";
+import ChatBubble from "./components/chat/Chat";
 import { FaMicrophone } from "react-icons/fa";
 import InsertCommentIcon from '@mui/icons-material/InsertComment';
 

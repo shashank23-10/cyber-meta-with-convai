@@ -5,6 +5,7 @@ import { SocketProvider } from './context/SocketContext';
 import LoadingScreen from './components/LoadingScreen';
 import Scene from './Scene';
 import ScenarioControls from './components/ScenarioControls';
+import ConvAiIntegration from './ConvAiIntegration';
 import './styles.css';
 
 
@@ -24,6 +25,7 @@ const App = () => {
               </Canvas>
             </div>
             <ScenarioControls />
+            <ConvAiIntegration />
           </div>
         </Suspense>
       </ScenariosProvider>
