@@ -9,6 +9,8 @@ import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import Alert from './Alert';
 import Location from './Location';
+import ConvAiIntegration from '../ConvAiIntegration';
+
 
 import usbIcon from '../assets/usb-icon.jpg';
 
@@ -120,7 +122,24 @@ return (
             : { top: '20px', right: '80px' }
         }
     />
+
     )}
+
+    <ConvAiIntegration
+    // for the chat panel itself
+    positionStyle={{
+        position: 'absolute',
+        right: isOpen ? '360px' : '60px',
+        transition: 'right 0.5s ease',
+    }}
+    // for the little toggle-icon
+    iconPositionStyle={{
+        position: 'absolute',
+        right: isOpen ? '360px' : '60px',
+        transition: 'right 0.5s ease',
+    }}
+    />
+
 
     {isOpen && (
     <div className="scenario-controls">

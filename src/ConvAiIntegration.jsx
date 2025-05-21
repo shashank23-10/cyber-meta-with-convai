@@ -5,9 +5,13 @@ import { useConvaiClient } from "./hooks/useConvaiClient";
 import { Experience } from "./components/Experience";
 import ChatBubble from "./components/chat/Chat";
 import { FaMicrophone } from "react-icons/fa";
+import { IconButton } from "@mui/material";
 import InsertCommentIcon from '@mui/icons-material/InsertComment';
 
-const ConvAiIntegration = () => {
+const ConvAiIntegration = ({ 
+positionStyle = {},
+iconPositionStyle = {}
+}) => {
 const convaiApiKey = "40fb8118ec1dbc8b4b76a13208efdd0d";
 const characterId = "ad24dcfc-2f15-11f0-b949-42010a7be01f";
 const { client } = useConvaiClient(characterId, convaiApiKey);
@@ -29,20 +33,20 @@ return () => {
 
 const styles = {
 openBtn: {
-    position: "absolute", right: 36, bottom: 36,
-    width: 24, height: 24,
-    cursor: "pointer", zIndex: 1100,
+    position: "absolute", right: 0, bottom: 10,
+    width: 42, height: 42,
+    cursor: "pointer", 
 },
 openIcon: {
     width: "100%", height: "100%",
-    padding: "12px",
+    padding: "6px",
     border: "2px solid #e8b403",
     borderRadius: "50%",
     color: "#e8b403",
 },
 panelBodyContainer: {
-    position: "absolute", right: 25, bottom: 75,
-    width: "24vw", height: "65vh",
+    position: "absolute", right: 0, bottom: 0,
+    width: "24vw", height: "86vh",
     background: "transparent", zIndex: 1050,
     display: "flex", flexDirection: "column",
     padding: "30px 0",
@@ -83,12 +87,30 @@ chatContainer: {
 
 return (
 <>
-    <div style={styles.openBtn} onClick={() => setPanelOpen(!panelOpen)}>
-    <InsertCommentIcon style={styles.openIcon} />
-    </div>
+    <IconButton
+        onClick={() => setPanelOpen(v => !v)}
+        sx={{
+        ...styles.openBtn,
+        ...iconPositionStyle,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 1100
+        }}
+    >
+        <InsertCommentIcon
+        sx={{
+            fontSize: 24,
+            color: "#e8b403",
+            border: "2px solid #e8b403",
+            borderRadius: "50%",
+            p: 0.5
+        }}
+        />
+    </IconButton>
 
     {panelOpen && (
-    <div style={styles.panelBodyContainer}>
+    <div style={{ ...styles.panelBodyContainer, ...positionStyle }}>    
         <div style={styles.panelBody}>
         <KeyboardControls map={[
             { name: "forward",  keys: ["ArrowUp","w"] },

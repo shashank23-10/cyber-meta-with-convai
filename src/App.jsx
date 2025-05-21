@@ -21,11 +21,10 @@ const App = () => {
                 gl={{ antialias: true }}
                 camera={{ fov: 75, position: [0, 1.5, 10] }}
               >
-               <Scene />
+              <Scene />
               </Canvas>
             </div>
             <ScenarioControls />
-            <ConvAiIntegration />
           </div>
         </Suspense>
       </ScenariosProvider>
