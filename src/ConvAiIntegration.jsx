@@ -33,7 +33,7 @@ return () => {
 
 const styles = {
 openBtn: {
-    position: "absolute", right: 0, bottom: 10,
+    position: "absolute", right: "-10vw", bottom: "-2vh",
     width: 42, height: 42,
     cursor: "pointer", 
 },
@@ -45,7 +45,7 @@ openIcon: {
     color: "#e8b403",
 },
 panelBodyContainer: {
-    position: "absolute", right: 0, bottom: 0,
+    position: "absolute", right: 0, bottom: "-5vh",
     width: "24vw", height: "86vh",
     background: "transparent", zIndex: 1050,
     display: "flex", flexDirection: "column",
@@ -125,7 +125,7 @@ return (
                 <Canvas
                 style={styles.avatarCanvas}
                 shadows gl={{ alpha: true }}
-                camera={{ position: [0, 0.026, 1.8], fov: 25 }}
+                camera={{ position: [0, 0.02, 0.3], fov: 50 }}
                 >
                 <Experience client={client} />
                 </Canvas>

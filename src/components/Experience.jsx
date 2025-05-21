@@ -8,8 +8,10 @@ import { Suspense, useEffect, useState } from 'react';
 import { CuboidCollider, Physics, RigidBody } from '@react-three/rapier';
 import { ConvaiFPS } from './fps/convaiFPS';
 import { Anita } from './models/Anita';
+
 export const Experience = ({ client }) => {
   const [gravity, setGravity] = useState([0, 0, 0]);
+
   useEffect(() => {
     setGravity([0, -9.81, 0]);
   }, []);
@@ -35,7 +37,12 @@ export const Experience = ({ client }) => {
       <Suspense>
         <Physics gravity={gravity}>
           <ConvaiFPS />
-          <Anita client={client} />
+
+          {/* Scale up the Anita model */}
+          <group scale={[1.5, 1.5, 1.5]}>
+            <Anita client={client} />
+          </group>
+
           <RigidBody type="fixed">
             <CuboidCollider args={[5, 5, 0.1]} position={[0, 1.5, -3]} />
             <CuboidCollider
